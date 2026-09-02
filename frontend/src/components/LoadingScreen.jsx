@@ -79,7 +79,7 @@ const styles = {
     width: '56px',
     height: '56px',
     borderRadius: '16px',
-    background: 'var(--accent-green)',
+    background: 'var(--accent-blue)',
     display: 'flex',
     alignItems: 'center',
     justifyContent: 'center',
@@ -111,9 +111,9 @@ const styles = {
   progressBar: {
     height: '100%',
     width: '60%',
-    background: 'var(--accent-green)',
+    background: 'var(--accent-blue)',
     borderRadius: '4px',
-    boxShadow: '0 0 10px var(--accent-green)',
+    boxShadow: '0 0 10px var(--accent-blue)',
     animation: 'loadingSlide 1.5s infinite ease-in-out',
   },
   messageRow: {

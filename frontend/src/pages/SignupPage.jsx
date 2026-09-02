@@ -109,7 +109,7 @@ export default function SignupPage() {
           </div>
 
           <p style={styles.note}>
-            Creating account as: <strong style={{ color: 'var(--accent-green)', textTransform: 'capitalize' }}>{role}</strong>
+            Creating account as: <strong style={{ color: 'var(--accent-blue)', textTransform: 'capitalize' }}>{role}</strong>
           </p>
 
           <button id="signup-submit" className="btn-primary" type="submit" disabled={loading} style={{ width: '100%', height: '44px' }}>
@@ -134,12 +134,12 @@ const styles = {
   glowOrb: { position: 'absolute', top: '50%', left: '50%', transform: 'translate(-50%, -50%)', width: '600px', height: '600px', borderRadius: '50%', background: 'radial-gradient(circle, var(--shadow-glow), transparent 70%)', pointerEvents: 'none' },
   card: { width: '100%', maxWidth: '440px', padding: '1.5rem', display: 'flex', flexDirection: 'column', gap: '0.75rem', position: 'relative', zIndex: 1, maxHeight: '92dvh', overflowY: 'auto' },
   logoWrap: { display: 'flex', alignItems: 'center', gap: '0.75rem' },
-  logoIcon: { width: '42px', height: '42px', borderRadius: '12px', background: 'var(--accent-green)', display: 'flex', alignItems: 'center', justifyContent: 'center', boxShadow: '0 0 16px var(--shadow-glow)', flexShrink: 0 },
+  logoIcon: { width: '42px', height: '42px', borderRadius: '12px', background: 'var(--accent-blue)', display: 'flex', alignItems: 'center', justifyContent: 'center', boxShadow: '0 0 16px var(--shadow-glow)', flexShrink: 0 },
   logoText: { fontSize: '1.5rem', fontWeight: '800', color: 'var(--text-primary)' },
   tagline: { color: 'var(--text-muted)', fontSize: '0.82rem', marginTop: '-0.25rem' },
   roleToggleWrap: { display: 'flex', background: 'var(--bg-card)', borderRadius: '12px', padding: '4px', border: '1px solid var(--border-color)', gap: '4px', marginTop: '0.25rem' },
   roleTab: { flex: 1, display: 'flex', alignItems: 'center', justifyContent: 'center', gap: '0.4rem', padding: '0.5rem', minHeight: '44px', borderRadius: '8px', border: 'none', background: 'transparent', color: 'var(--text-muted)', fontSize: '0.82rem', fontWeight: '600', cursor: 'pointer', transition: 'all 0.2s' },
-  roleTabActive: { background: 'var(--bg-panel)', color: 'var(--accent-green)', boxShadow: '0 2px 8px rgba(0,0,0,0.15)' },
+  roleTabActive: { background: 'var(--bg-panel)', color: 'var(--accent-blue)', boxShadow: '0 2px 8px rgba(0,0,0,0.15)' },
   form: { display: 'flex', flexDirection: 'column', gap: '0.75rem' },
   fieldWrap: { display: 'flex', flexDirection: 'column', gap: '0.35rem' },
   label: { fontSize: '0.78rem', fontWeight: '600', color: 'var(--text-muted)' },
@@ -147,5 +147,5 @@ const styles = {
   inputIcon: { position: 'absolute', left: '0.75rem', top: '50%', transform: 'translateY(-50%)', color: 'var(--text-muted)' },
   note: { fontSize: '0.75rem', color: 'var(--text-muted)', background: 'var(--bg-card)', padding: '0.4rem 0.65rem', borderRadius: '8px', border: '1px solid var(--border-color)' },
   switchText: { textAlign: 'center', fontSize: '0.82rem', color: 'var(--text-muted)', marginTop: '0.25rem' },
-  link: { color: 'var(--accent-green)', textDecoration: 'none', fontWeight: '700' },
+  link: { color: 'var(--accent-blue)', textDecoration: 'none', fontWeight: '700' },
 }

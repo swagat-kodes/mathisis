@@ -118,7 +118,7 @@ const styles = {
   glowOrb: { position: 'absolute', top: '50%', left: '50%', transform: 'translate(-50%, -50%)', width: '600px', height: '600px', borderRadius: '50%', background: 'radial-gradient(circle, var(--shadow-glow), transparent 70%)', pointerEvents: 'none' },
   card: { width: '100%', maxWidth: '420px', padding: '1.75rem 1.5rem', display: 'flex', flexDirection: 'column', gap: '1rem', position: 'relative', zIndex: 1, maxHeight: '90dvh', overflowY: 'auto' },
   logoWrap: { display: 'flex', alignItems: 'center', gap: '0.75rem' },
-  logoIcon: { width: '44px', height: '44px', borderRadius: '12px', background: 'var(--accent-green)', display: 'flex', alignItems: 'center', justifyContent: 'center', boxShadow: '0 0 16px var(--shadow-glow)', flexShrink: 0 },
+  logoIcon: { width: '44px', height: '44px', borderRadius: '12px', background: 'var(--accent-blue)', display: 'flex', alignItems: 'center', justifyContent: 'center', boxShadow: '0 0 16px var(--shadow-glow)', flexShrink: 0 },
   logoText: { fontSize: '1.5rem', fontWeight: '800', color: 'var(--text-primary)' },
   tagline: { color: 'var(--text-muted)', fontSize: '0.82rem', marginTop: '-0.5rem' },
   heading: { fontSize: '1.15rem', fontWeight: '700', color: 'var(--text-primary)', marginTop: '0.25rem' },
@@ -128,5 +128,5 @@ const styles = {
   inputWrap: { position: 'relative' },
   inputIcon: { position: 'absolute', left: '0.75rem', top: '50%', transform: 'translateY(-50%)', color: 'var(--text-muted)' },
   switchText: { textAlign: 'center', fontSize: '0.82rem', color: 'var(--text-muted)', marginTop: '0.5rem' },
-  link: { color: 'var(--accent-green)', textDecoration: 'none', fontWeight: '700' },
+  link: { color: 'var(--accent-blue)', textDecoration: 'none', fontWeight: '700' },
 }

@@ -38,7 +38,7 @@ export default function HelpCenterPanel() {
       {/* Header */}
       <div style={styles.header}>
         <div style={{ display: 'flex', alignItems: 'center', gap: '0.625rem' }}>
-          <HelpCircle size={20} color="var(--accent-green)" />
+          <HelpCircle size={20} color="var(--accent-blue)" />
           <span style={{ fontWeight: '700', fontSize: '1rem', color: 'var(--text-primary)' }}>
             Help Center & Support
           </span>
@@ -103,11 +103,11 @@ export default function HelpCenterPanel() {
 
         {/* Contact Support Card */}
         <div className="user-card-hover" style={styles.supportCard}>
-          <Mail size={22} color="var(--accent-green)" />
+          <Mail size={22} color="var(--accent-blue)" />
           <div>
             <h4 style={{ fontWeight: '700', fontSize: '0.92rem', color: 'var(--text-primary)' }}>Need direct support?</h4>
             <p style={{ fontSize: '0.8rem', color: 'var(--text-muted)', marginTop: '2px' }}>
-              Reach out to our support team at <strong style={{ color: 'var(--accent-green)' }}>support@mathisis.ai</strong>
+              Reach out to our support team at <strong style={{ color: 'var(--accent-blue)' }}>support@mathisis.ai</strong>
             </p>
           </div>
         </div>
@@ -121,7 +121,7 @@ const styles = {
   header: { padding: '1rem 1.25rem', borderBottom: '1px solid var(--border-color)', background: 'var(--bg-panel)' },
   content: { flex: 1, minHeight: 0, overflowY: 'auto', padding: '1.5rem', maxWidth: '800px', width: '100%', margin: '0 auto' },
   banner: { padding: '1.25rem', borderRadius: '16px', background: 'var(--bg-card)', border: '1px solid var(--border-color)', display: 'flex', gap: '1rem', alignItems: 'center', marginBottom: '1.5rem' },
-  bannerIcon: { width: '48px', height: '48px', borderRadius: '14px', background: 'var(--accent-green)', display: 'flex', alignItems: 'center', justifyContent: 'center', flexShrink: 0 },
+  bannerIcon: { width: '48px', height: '48px', borderRadius: '14px', background: 'var(--accent-blue)', display: 'flex', alignItems: 'center', justifyContent: 'center', flexShrink: 0 },
   searchIcon: { position: 'absolute', left: '0.875rem', top: '50%', transform: 'translateY(-50%)', color: 'var(--text-muted)' },
   faqCard: { borderRadius: '12px', background: 'var(--bg-card)', border: '1px solid var(--border-color)', overflow: 'hidden' },
   faqHeader: { padding: '0.875rem 1.125rem', display: 'flex', alignItems: 'center', justifyContent: 'space-between', cursor: 'pointer' },

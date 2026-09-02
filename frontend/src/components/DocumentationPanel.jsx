@@ -50,11 +50,11 @@ export default function DocumentationPanel({
       {/* Header & Filters */}
       <div style={styles.header}>
         <div style={{ display: 'flex', alignItems: 'center', gap: '0.625rem' }}>
-          <FileText size={20} color="var(--accent-green)" />
+          <FileText size={20} color="var(--accent-blue)" />
           <span style={{ fontWeight: '700', fontSize: '1rem', color: 'var(--text-primary)' }}>
             Course Documentation & Textbooks
           </span>
-          <span className="badge badge-green">{filteredMaterials.length} PDFs</span>
+          <span className="badge badge-blue">{filteredMaterials.length} PDFs</span>
         </div>
 
         {/* Filters */}
@@ -143,11 +143,11 @@ export default function DocumentationPanel({
             {filteredMaterials.map(mat => (
               <div key={mat.id} className="card-hover fade-in-up" style={styles.card}>
                 <div style={styles.pdfBadge}>
-                  <FileText size={24} color="var(--accent-green)" />
+                  <FileText size={24} color="var(--accent-blue)" />
                 </div>
                 <div style={{ flex: 1, minWidth: 0 }}>
                   <div style={{ display: 'flex', gap: '0.4rem', marginBottom: '0.35rem' }}>
-                    <span className="badge badge-green" style={{ fontSize: '0.68rem' }}>
+                    <span className="badge badge-blue" style={{ fontSize: '0.68rem' }}>
                       Year {mat.year} · Sem {mat.semester}
                     </span>
                   </div>
@@ -185,9 +185,9 @@ const styles = {
   empty: { display: 'flex', flexDirection: 'column', alignItems: 'center', justifyContent: 'center', padding: '4rem 1rem', textAlign: 'center' },
   grid: { display: 'grid', gridTemplateColumns: 'repeat(auto-fill, minmax(260px, 1fr))', gap: '1rem' },
   card: { padding: '1.125rem', borderRadius: '14px', background: 'var(--bg-card)', border: '1px solid var(--border-color)', display: 'flex', flexDirection: 'column', gap: '0.875rem', transition: 'border-color 0.2s' },
-  pdfBadge: { width: '42px', height: '42px', borderRadius: '10px', background: 'rgba(43, 242, 160, 0.12)', border: '1px solid rgba(43, 242, 160, 0.3)', display: 'flex', alignItems: 'center', justifyContent: 'center' },
+  pdfBadge: { width: '42px', height: '42px', borderRadius: '10px', background: 'rgba(59, 130, 246, 0.12)', border: '1px solid rgba(59, 130, 246, 0.3)', display: 'flex', alignItems: 'center', justifyContent: 'center' },
   bookTitle: { fontWeight: '700', fontSize: '0.92rem', color: 'var(--text-primary)', overflow: 'hidden', textOverflow: 'ellipsis', whiteSpace: 'nowrap' },
-  subjectName: { fontSize: '0.78rem', color: 'var(--accent-green)', fontWeight: '600', marginTop: '2px' },
+  subjectName: { fontSize: '0.78rem', color: 'var(--accent-blue)', fontWeight: '600', marginTop: '2px' },
   pageMeta: { fontSize: '0.72rem', color: 'var(--text-muted)', display: 'flex', alignItems: 'center', gap: '0.25rem', marginTop: '0.35rem' },
   cardActions: { marginTop: 'auto', pt: '0.5rem' },
 }

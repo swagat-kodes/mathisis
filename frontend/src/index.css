@@ -6,12 +6,13 @@
   --bg-panel: #14151F;       /* Sidebar & Panel BG */
   --bg-card: #1D1E2A;        /* Card & Input BG */
   --bg-hover: #262838;       /* Hover / Selected state */
-  --accent-green: #2BF2A0;   /* Primary Neon Green Accent */
+  --accent-blue: #3B82F6;    /* Primary Electric Blue Accent */
+  --accent-green: var(--accent-blue); /* Compatibility alias */
   --accent-gold: #F59E0B;    /* Gold Star Accent */
   --text-primary: #FFFFFF;   /* Primary Text */
   --text-muted: #8C90A0;     /* Muted / Secondary Text */
   --border-color: #262838;   /* Subtle Border */
-  --shadow-glow: rgba(43, 242, 160, 0.25);
+  --shadow-glow: rgba(59, 130, 246, 0.25);
 }
 
 [data-theme="light"] {
@@ -19,12 +20,13 @@
   --bg-panel: #FFFFFF;       /* Pure White Panel BG */
   --bg-card: #EBF0F5;        /* Soft Gray-Blue Card BG */
   --bg-hover: #DDE3EA;       /* Light Hover state */
-  --accent-green: #10B981;   /* Emerald Green Accent */
+  --accent-blue: #2563EB;    /* Royal Blue Accent */
+  --accent-green: var(--accent-blue); /* Compatibility alias */
   --accent-gold: #D97706;    /* Warm Gold Accent */
   --text-primary: #111827;   /* Dark Primary Text */
   --text-muted: #6B7280;     /* Slate Muted Text */
   --border-color: #E2E8F0;   /* Light Border */
-  --shadow-glow: rgba(16, 185, 129, 0.2);
+  --shadow-glow: rgba(37, 99, 235, 0.2);
 }
 
 /* ── Base Reset & Font (Verdana, sans-serif) ───────────── */
@@ -72,7 +74,7 @@ button, input, select, textarea {
   transition: background 0.2s ease;
 }
 ::-webkit-scrollbar-thumb:hover {
-  background: var(--accent-green);
+  background: var(--accent-blue);
 }
 
 /* ── Glass & Cards with Smooth Hover Animations ──────────────── */
@@ -89,7 +91,7 @@ button, input, select, textarea {
 
 .glass:hover, .card:hover {
   transform: translateY(-3px);
-  border-color: rgba(43, 242, 160, 0.35);
+  border-color: rgba(59, 130, 246, 0.35);
   box-shadow: 0 12px 30px rgba(0, 0, 0, 0.35), 0 0 20px var(--shadow-glow);
 }
 
@@ -110,8 +112,8 @@ button, input, select, textarea {
               filter 0.22s ease,
               box-shadow 0.22s cubic-bezier(0.16, 1, 0.3, 1),
               background-color 0.22s ease;
-  background: var(--accent-green);
-  color: #0B0C10;
+  background: var(--accent-blue);
+  color: #FFFFFF;
   box-shadow: 0 4px 16px var(--shadow-glow);
   position: relative;
   overflow: hidden;
@@ -159,7 +161,7 @@ button, input, select, textarea {
 .btn-secondary:hover:not(:disabled) {
   transform: translateY(-2px);
   background: var(--bg-hover);
-  border-color: rgba(43, 242, 160, 0.4);
+  border-color: rgba(59, 130, 246, 0.4);
   color: var(--text-primary);
   box-shadow: 0 6px 18px rgba(0, 0, 0, 0.25);
 }
@@ -188,22 +190,22 @@ select, .select-field {
               border-color 0.22s ease,
               background-color 0.22s ease,
               box-shadow 0.22s cubic-bezier(0.16, 1, 0.3, 1);
-  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='14' height='14' viewBox='0 0 24 24' fill='none' stroke='%232BF2A0' stroke-width='2.5' stroke-linecap='round' stroke-linejoin='round'%3E%3Cpolyline points='6 9 12 15 18 9'%3E%3C/polyline%3E%3C/svg%3E");
+  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='14' height='14' viewBox='0 0 24 24' fill='none' stroke='%233B82F6' stroke-width='2.5' stroke-linecap='round' stroke-linejoin='round'%3E%3Cpolyline points='6 9 12 15 18 9'%3E%3C/polyline%3E%3C/svg%3E");
   background-repeat: no-repeat;
   background-position: right 0.85rem center;
 }
 
 select:hover:not(:disabled), .select-field:hover:not(:disabled) {
   transform: translateY(-2px);
-  border-color: var(--accent-green);
+  border-color: var(--accent-blue);
   background-color: var(--bg-hover);
   box-shadow: 0 6px 20px var(--shadow-glow);
 }
 
 select:focus, .select-field:focus {
   transform: translateY(-1px);
-  border-color: var(--accent-green);
-  box-shadow: 0 0 0 3px rgba(43, 242, 160, 0.22), 0 6px 20px var(--shadow-glow);
+  border-color: var(--accent-blue);
+  box-shadow: 0 0 0 3px rgba(59, 130, 246, 0.22), 0 6px 20px var(--shadow-glow);
 }
 
 select:disabled, .select-field:disabled {
@@ -243,13 +245,13 @@ select option, .select-field option {
 }
 
 .input-field:hover:not(:focus):not(:disabled), textarea:hover:not(:focus):not(:disabled) {
-  border-color: rgba(43, 242, 160, 0.45);
+  border-color: rgba(59, 130, 246, 0.45);
   background-color: var(--bg-hover);
 }
 
 .input-field:focus, textarea:focus {
-  border-color: var(--accent-green);
-  box-shadow: 0 0 0 3px rgba(43, 242, 160, 0.22), 0 4px 14px rgba(0, 0, 0, 0.15);
+  border-color: var(--accent-blue);
+  box-shadow: 0 0 0 3px rgba(59, 130, 246, 0.22), 0 4px 14px rgba(0, 0, 0, 0.15);
   transform: translateY(-1px);
 }
 
@@ -270,12 +272,12 @@ select option, .select-field option {
   transform: translateY(-1px) scale(1.05);
 }
 
-.badge-green {
-  background: rgba(43, 242, 160, 0.14);
-  color: var(--accent-green);
-  border: 1px solid rgba(43, 242, 160, 0.35);
+.badge-blue, .badge-green {
+  background: rgba(59, 130, 246, 0.14);
+  color: var(--accent-blue);
+  border: 1px solid rgba(59, 130, 246, 0.35);
 }
-.badge-green:hover {
+.badge-blue:hover, .badge-green:hover {
   box-shadow: 0 0 10px var(--shadow-glow);
 }
 
@@ -324,7 +326,7 @@ select option, .select-field option {
   width: 6px;
   height: 6px;
   border-radius: 50%;
-  background-color: var(--accent-green);
+  background-color: var(--accent-blue);
   display: inline-block;
   animation: typingBounce 1.4s infinite ease-in-out both;
 }
@@ -383,7 +385,7 @@ select option, .select-field option {
 
 .nav-item-btn:hover svg {
   transform: scale(1.18) rotate(4deg);
-  color: var(--accent-green) !important;
+  color: var(--accent-blue) !important;
 }
 
 .mobile-nav-btn {
@@ -428,8 +430,8 @@ select option, .select-field option {
 .icon-btn-hover:hover {
   transform: translateY(-2px) scale(1.08);
   background: var(--bg-hover);
-  color: var(--accent-green);
-  border-color: rgba(43, 242, 160, 0.4);
+  color: var(--accent-blue);
+  border-color: rgba(59, 130, 246, 0.4);
   box-shadow: 0 4px 14px var(--shadow-glow);
 }
 
@@ -455,7 +457,7 @@ select option, .select-field option {
 .history-item-btn:hover {
   transform: translateX(4px);
   background: var(--bg-hover);
-  border-color: rgba(43, 242, 160, 0.35);
+  border-color: rgba(59, 130, 246, 0.35);
   box-shadow: 0 4px 16px rgba(0, 0, 0, 0.25);
 }
 
@@ -483,7 +485,7 @@ select option, .select-field option {
 
 .user-card-hover:hover {
   transform: translateY(-2px);
-  border-color: rgba(43, 242, 160, 0.4);
+  border-color: rgba(59, 130, 246, 0.4);
   box-shadow: 0 6px 18px rgba(0, 0, 0, 0.25), 0 0 12px var(--shadow-glow);
 }
 
@@ -496,7 +498,7 @@ select option, .select-field option {
 
 .option-card-hover:hover {
   transform: translateY(-3px) scale(1.01);
-  border-color: var(--accent-green);
+  border-color: var(--accent-blue);
   box-shadow: 0 8px 24px rgba(0,0,0,0.25), 0 0 16px var(--shadow-glow);
 }
 
@@ -508,7 +510,7 @@ select option, .select-field option {
 
 .faq-card-hover:hover {
   transform: translateY(-2px);
-  border-color: var(--accent-green);
+  border-color: var(--accent-blue);
   box-shadow: 0 6px 20px rgba(0,0,0,0.25);
 }
 
@@ -520,7 +522,7 @@ select option, .select-field option {
 
 .forum-card-hover:hover {
   transform: translateY(-2px);
-  border-color: var(--accent-green);
+  border-color: var(--accent-blue);
   box-shadow: 0 8px 24px rgba(0,0,0,0.3);
 }
 
@@ -530,7 +532,7 @@ select option, .select-field option {
 }
 
 .link-hover:hover {
-  color: var(--accent-green);
+  color: var(--accent-blue);
   transform: translateX(2px);
   text-decoration: underline;
   text-underline-offset: 4px;

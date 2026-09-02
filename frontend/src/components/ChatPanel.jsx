@@ -161,7 +161,7 @@ export default function ChatPanel({
           <div style={{ flex: 1, minWidth: 0 }}>
             <div style={{ display: 'flex', alignItems: 'center', gap: '0.4rem', flexWrap: 'wrap' }}>
               <h2 style={styles.headerTitle}>Mathisis AI</h2>
-              <span className="badge badge-green" style={{ fontSize: '0.68rem', padding: '0.15rem 0.5rem' }}>
+              <span className="badge badge-blue" style={{ fontSize: '0.68rem', padding: '0.15rem 0.5rem' }}>
                 <Sparkles size={9} /> {answerStyle === 'concise' ? 'Concise Mode' : 'Detailed Mode'}
               </span>
             </div>
@@ -248,7 +248,7 @@ export default function ChatPanel({
           >
             {/* Meta */}
             <div style={styles.msgMeta(msg.role)}>
-              {msg.role !== 'user' && (msg.role === 'error' ? <AlertCircle size={12} /> : <Sparkles size={12} color="var(--accent-green)" />)}
+              {msg.role !== 'user' && (msg.role === 'error' ? <AlertCircle size={12} /> : <Sparkles size={12} color="var(--accent-blue)" />)}
               <span>{msg.role === 'user' ? 'You' : msg.role === 'error' ? 'System Error' : 'Mathisis AI'}</span>
               {msg.role === 'user' && <User size={12} />}
             </div>
@@ -270,7 +270,7 @@ export default function ChatPanel({
               <div style={styles.sourcesWrap}>
                 <span style={{ fontSize: '0.7rem', color: 'var(--text-muted)', alignSelf: 'center' }}>Sources:</span>
                 {msg.sources.map((src, i) => (
-                  <span key={i} className="badge badge-green" style={{ fontSize: '0.68rem' }}>
+                  <span key={i} className="badge badge-blue" style={{ fontSize: '0.68rem' }}>
                     <BookOpen size={10} />
                     {src.book_name}{src.page_number ? ` (p. ${src.page_number})` : ''}
                   </span>
@@ -283,7 +283,7 @@ export default function ChatPanel({
         {/* Loading Indicator */}
         {loading && (
           <div style={{ display: 'flex', alignItems: 'center', gap: '0.5rem' }} className="fade-in-up">
-            <div style={styles.aiAvatarMini}><Sparkles size={13} color="var(--accent-green)" /></div>
+            <div style={styles.aiAvatarMini}><Sparkles size={13} color="var(--accent-blue)" /></div>
             <div style={{ ...styles.bubble('assistant'), padding: '0.625rem 0.875rem' }}>
               <div style={{ display: 'flex', gap: '5px', alignItems: 'center' }}>
                 <span className="typing-dot" />
@@ -472,7 +472,7 @@ const styles = {
     width: '34px',
     height: '34px',
     borderRadius: '10px',
-    background: 'var(--accent-green)',
+    background: 'var(--accent-blue)',
     display: 'flex',
     alignItems: 'center',
     justifyContent: 'center',
@@ -555,7 +555,7 @@ const styles = {
     borderRadius: '16px',
     background: role === 'user' ? 'var(--bg-card)' : role === 'error' ? 'rgba(239, 68, 68, 0.12)' : 'var(--bg-card)',
     border: `1px solid ${
-      role === 'user' ? 'var(--accent-green)' : role === 'error' ? 'rgba(239, 68, 68, 0.3)' : 'var(--border-color)'
+      role === 'user' ? 'var(--accent-blue)' : role === 'error' ? 'rgba(239, 68, 68, 0.3)' : 'var(--border-color)'
     }`,
     boxShadow: role === 'user' ? '0 2px 8px var(--shadow-glow)' : 'none',
   }),

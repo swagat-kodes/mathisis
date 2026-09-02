@@ -31,7 +31,7 @@ function App() {
               fontFamily: "'Verdana', 'Geneva', sans-serif",
               fontSize: '0.85rem',
             },
-            success: { iconTheme: { primary: 'var(--accent-green)', secondary: 'white' } },
+            success: { iconTheme: { primary: 'var(--accent-blue)', secondary: 'white' } },
             error:   { iconTheme: { primary: '#ef4444', secondary: 'white' } },
           }}
         />

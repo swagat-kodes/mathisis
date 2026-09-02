@@ -183,7 +183,7 @@ export default function StudentDashboard() {
                 <div style={{ display: 'flex', alignItems: 'center', gap: '0.4rem', flexWrap: 'wrap' }}>
                   <span style={styles.brandTitle}>Mathisis AI</span>
                   {isAdmin && (
-                    <span className="badge badge-green" style={{ fontSize: '0.62rem', padding: '0.15rem 0.45rem', flexShrink: 0 }}>
+                    <span className="badge badge-blue" style={{ fontSize: '0.62rem', padding: '0.15rem 0.45rem', flexShrink: 0 }}>
                       <Shield size={9} /> Admin
                     </span>
                   )}
@@ -214,7 +214,7 @@ export default function StudentDashboard() {
                 ...(activeTab === 'chat' ? styles.navItemActive : {})
               }}
             >
-              <Sparkles size={18} color={activeTab === 'chat' ? 'var(--accent-green)' : 'var(--text-muted)'} />
+              <Sparkles size={18} color={activeTab === 'chat' ? 'var(--accent-blue)' : 'var(--text-muted)'} />
               <span>Mathisis AI</span>
               {activeTab === 'chat' && <div style={styles.activeDot} />}
             </button>
@@ -226,7 +226,7 @@ export default function StudentDashboard() {
                 ...(activeTab === 'forum' ? styles.navItemActive : {})
               }}
             >
-              <MessageSquare size={18} color={activeTab === 'forum' ? 'var(--accent-green)' : 'var(--text-muted)'} />
+              <MessageSquare size={18} color={activeTab === 'forum' ? 'var(--accent-blue)' : 'var(--text-muted)'} />
               <span>Ask Q&A Forum</span>
             </button>
 
@@ -237,7 +237,7 @@ export default function StudentDashboard() {
                 ...(activeTab === 'doc' ? styles.navItemActive : {})
               }}
             >
-              <FileText size={18} color={activeTab === 'doc' ? 'var(--accent-green)' : 'var(--text-muted)'} />
+              <FileText size={18} color={activeTab === 'doc' ? 'var(--accent-blue)' : 'var(--text-muted)'} />
               <span>Documentation</span>
             </button>
 
@@ -248,7 +248,7 @@ export default function StudentDashboard() {
                 ...(activeTab === 'help' ? styles.navItemActive : {})
               }}
             >
-              <HelpCircle size={18} color={activeTab === 'help' ? 'var(--accent-green)' : 'var(--text-muted)'} />
+              <HelpCircle size={18} color={activeTab === 'help' ? 'var(--accent-blue)' : 'var(--text-muted)'} />
               <span>Help Center</span>
             </button>
 
@@ -259,7 +259,7 @@ export default function StudentDashboard() {
                 ...(activeTab === 'preferences' ? styles.navItemActive : {})
               }}
             >
-              <Settings size={18} color={activeTab === 'preferences' ? 'var(--accent-green)' : 'var(--text-muted)'} />
+              <Settings size={18} color={activeTab === 'preferences' ? 'var(--accent-blue)' : 'var(--text-muted)'} />
               <span>Preferences</span>
             </button>
           </div>
@@ -374,7 +374,7 @@ export default function StudentDashboard() {
                 onClick={() => setActiveTab('chat')}
                 className="mobile-nav-btn"
                 style={{
-                  color: activeTab === 'chat' ? 'var(--accent-green)' : 'var(--text-muted)'
+                  color: activeTab === 'chat' ? 'var(--accent-blue)' : 'var(--text-muted)'
                 }}
               >
                 <Sparkles size={18} />
@@ -385,7 +385,7 @@ export default function StudentDashboard() {
                 onClick={() => setActiveTab('forum')}
                 className="mobile-nav-btn"
                 style={{
-                  color: activeTab === 'forum' ? 'var(--accent-green)' : 'var(--text-muted)'
+                  color: activeTab === 'forum' ? 'var(--accent-blue)' : 'var(--text-muted)'
                 }}
               >
                 <MessageSquare size={18} />
@@ -396,7 +396,7 @@ export default function StudentDashboard() {
                 onClick={() => setActiveTab('doc')}
                 className="mobile-nav-btn"
                 style={{
-                  color: activeTab === 'doc' ? 'var(--accent-green)' : 'var(--text-muted)'
+                  color: activeTab === 'doc' ? 'var(--accent-blue)' : 'var(--text-muted)'
                 }}
               >
                 <FileText size={18} />
@@ -407,7 +407,7 @@ export default function StudentDashboard() {
                 onClick={() => setActiveTab('help')}
                 className="mobile-nav-btn"
                 style={{
-                  color: activeTab === 'help' ? 'var(--accent-green)' : 'var(--text-muted)'
+                  color: activeTab === 'help' ? 'var(--accent-blue)' : 'var(--text-muted)'
                 }}
               >
                 <HelpCircle size={18} />
@@ -418,7 +418,7 @@ export default function StudentDashboard() {
                 onClick={() => setSidebarOpen(true)}
                 className="mobile-nav-btn"
                 style={{
-                  color: sidebarOpen ? 'var(--accent-green)' : 'var(--text-muted)'
+                  color: sidebarOpen ? 'var(--accent-blue)' : 'var(--text-muted)'
                 }}
               >
                 <Menu size={18} />
@@ -493,7 +493,7 @@ export default function StudentDashboard() {
                     ...(item.active ? styles.historyItemActive : {})
                   }}
                 >
-                  <MessageSquare size={15} color={item.active ? 'var(--accent-green)' : 'var(--text-muted)'} />
+                  <MessageSquare size={15} color={item.active ? 'var(--accent-blue)' : 'var(--text-muted)'} />
                   <div style={{ flex: 1, minWidth: 0 }}>
                     <p style={styles.itemTitle}>{item.title}</p>
                     <span style={styles.itemTime}>{item.time}</span>
@@ -561,7 +561,7 @@ const styles = {
     width: '38px',
     height: '38px',
     borderRadius: '12px',
-    background: 'var(--accent-green)',
+    background: 'var(--accent-blue)',
     display: 'flex',
     alignItems: 'center',
     justifyContent: 'center',
@@ -621,9 +621,9 @@ const styles = {
     width: '6px',
     height: '6px',
     borderRadius: '50%',
-    background: 'var(--accent-green)',
+    background: 'var(--accent-blue)',
     marginLeft: 'auto',
-    boxShadow: '0 0 8px var(--accent-green)',
+    boxShadow: '0 0 8px var(--accent-blue)',
   },
   userCard: {
     marginTop: 'auto',
@@ -641,13 +641,13 @@ const styles = {
     height: '34px',
     borderRadius: '10px',
     background: 'var(--bg-hover)',
-    color: 'var(--accent-green)',
+    color: 'var(--accent-blue)',
     fontWeight: '700',
     fontSize: '0.9rem',
     display: 'flex',
     alignItems: 'center',
     justifyContent: 'center',
-    border: '1px solid rgba(43, 242, 160, 0.3)',
+    border: '1px solid rgba(59, 130, 246, 0.3)',
     flexShrink: 0,
   },
   userInfo: {

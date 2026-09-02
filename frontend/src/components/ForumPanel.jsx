@@ -134,11 +134,11 @@ export default function ForumPanel({ subjectId: externalSubjectId }) {
       {/* Header */}
       <div style={styles.header}>
         <div style={{ display: 'flex', alignItems: 'center', gap: '0.625rem' }}>
-          <MessageSquare size={18} color="var(--accent-green)" />
+          <MessageSquare size={18} color="var(--accent-blue)" />
           <span style={{ fontWeight: '700', fontSize: '0.95rem', color: 'var(--text-primary)' }}>
             Ask Q&A Forum {isAdmin && '(Admin Mode)'}
           </span>
-          <span className="badge badge-green">{queries.length}</span>
+          <span className="badge badge-blue">{queries.length}</span>
         </div>
 
         <div style={{ display: 'flex', alignItems: 'center', gap: '0.5rem', flexWrap: 'wrap' }}>
@@ -245,7 +245,7 @@ export default function ForumPanel({ subjectId: externalSubjectId }) {
               <div style={{ flex: 1, minWidth: 0 }}>
                 <div style={{ display: 'flex', alignItems: 'center', gap: '0.5rem', marginBottom: '0.35rem', flexWrap: 'wrap' }}>
                   {q.is_flagged && <span className="badge badge-gold"><Flag size={10} /> Flagged</span>}
-                  <span className={`badge ${q.status === 'open' ? 'badge-green' : 'badge-gray'}`}>
+                  <span className={`badge ${q.status === 'open' ? 'badge-blue' : 'badge-gray'}`}>
                     {q.status === 'open' ? <Clock size={10} /> : <Lock size={10} />}
                     {q.status}
                   </span>

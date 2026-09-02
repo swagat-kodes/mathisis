@@ -250,7 +250,7 @@ export default function AdminDashboard() {
               <div style={{ display: 'flex', flexDirection: 'column', flex: 1, minWidth: 0 }}>
                 <div style={{ display: 'flex', alignItems: 'center', gap: '0.4rem', flexWrap: 'wrap' }}>
                   <span style={styles.brandTitle}>Mathisis AI</span>
-                  <span className="badge badge-green" style={{ fontSize: '0.62rem', padding: '0.15rem 0.45rem', flexShrink: 0 }}>
+                  <span className="badge badge-blue" style={{ fontSize: '0.62rem', padding: '0.15rem 0.45rem', flexShrink: 0 }}>
                     <Shield size={9} /> Admin
                   </span>
                 </div>
@@ -280,7 +280,7 @@ export default function AdminDashboard() {
                 ...(activeTab === 'upload' ? styles.navItemActive : {})
               }}
             >
-              <UploadCloud size={18} color={activeTab === 'upload' ? 'var(--accent-green)' : 'var(--text-muted)'} />
+              <UploadCloud size={18} color={activeTab === 'upload' ? 'var(--accent-blue)' : 'var(--text-muted)'} />
               <span>Upload Textbooks</span>
               {activeTab === 'upload' && <div style={styles.activeDot} />}
             </button>
@@ -292,7 +292,7 @@ export default function AdminDashboard() {
                 ...(activeTab === 'forum' ? styles.navItemActive : {})
               }}
             >
-              <MessageSquare size={18} color={activeTab === 'forum' ? 'var(--accent-green)' : 'var(--text-muted)'} />
+              <MessageSquare size={18} color={activeTab === 'forum' ? 'var(--accent-blue)' : 'var(--text-muted)'} />
               <span>Ask Q&A Forum</span>
             </button>
 
@@ -303,7 +303,7 @@ export default function AdminDashboard() {
                 ...(activeTab === 'help' ? styles.navItemActive : {})
               }}
             >
-              <HelpCircle size={18} color={activeTab === 'help' ? 'var(--accent-green)' : 'var(--text-muted)'} />
+              <HelpCircle size={18} color={activeTab === 'help' ? 'var(--accent-blue)' : 'var(--text-muted)'} />
               <span>Help Center</span>
             </button>
 
@@ -314,7 +314,7 @@ export default function AdminDashboard() {
                 ...(activeTab === 'preferences' ? styles.navItemActive : {})
               }}
             >
-              <Settings size={18} color={activeTab === 'preferences' ? 'var(--accent-green)' : 'var(--text-muted)'} />
+              <Settings size={18} color={activeTab === 'preferences' ? 'var(--accent-blue)' : 'var(--text-muted)'} />
               <span>Preferences</span>
             </button>
           </div>
@@ -322,7 +322,7 @@ export default function AdminDashboard() {
           {/* User Profile Card at Bottom */}
           <div className="user-card-hover" style={styles.userCard}>
             <div style={styles.userAvatar}>
-              <Shield size={16} color="var(--accent-green)" />
+              <Shield size={16} color="var(--accent-blue)" />
             </div>
             <div style={styles.userInfo}>
               <span style={styles.userName}>{user?.email?.split('@')[0]}</span>
@@ -368,7 +368,7 @@ export default function AdminDashboard() {
                   {/* Card 1: Subject Selection & Subject Creator */}
                   <div className="glass fade-in-up" style={styles.card}>
                     <div style={styles.cardHeader}>
-                      <BookOpen size={20} color="var(--accent-green)" />
+                      <BookOpen size={20} color="var(--accent-blue)" />
                       <h3 style={styles.cardTitle}>1. Select or Create Subject</h3>
                     </div>
 
@@ -474,7 +474,7 @@ export default function AdminDashboard() {
                   {/* Card 2: Upload PDF File */}
                   <div className="glass fade-in-up" style={styles.card}>
                     <div style={styles.cardHeader}>
-                      <UploadCloud size={20} color="var(--accent-green)" />
+                      <UploadCloud size={20} color="var(--accent-blue)" />
                       <h3 style={styles.cardTitle}>2. Upload Textbook PDF</h3>
                     </div>
 
@@ -488,7 +488,7 @@ export default function AdminDashboard() {
                     ) : (
                       <form onSubmit={handleUploadPdf} style={{ display: 'flex', flexDirection: 'column', gap: '1rem' }}>
                         <div style={styles.dropzone}>
-                          <FileText size={36} color={pdfFile ? 'var(--accent-green)' : 'var(--text-muted)'} />
+                          <FileText size={36} color={pdfFile ? 'var(--accent-blue)' : 'var(--text-muted)'} />
                           {pdfFile ? (
                             <div>
                               <p style={{ fontWeight: '700', color: 'var(--text-primary)', fontSize: '0.9rem' }}>{pdfFile.name}</p>
@@ -517,7 +517,7 @@ export default function AdminDashboard() {
                         {uploadProgress && (
                           <div style={styles.progressBox}>
                             <span className="typing-dot" /><span className="typing-dot" /><span className="typing-dot" />
-                            <span style={{ fontSize: '0.8rem', color: 'var(--accent-green)', fontWeight: '600' }}>
+                            <span style={{ fontSize: '0.8rem', color: 'var(--accent-blue)', fontWeight: '600' }}>
                               {uploadProgress}
                             </span>
                           </div>
@@ -563,7 +563,7 @@ export default function AdminDashboard() {
                 onClick={() => setActiveTab('upload')}
                 className="mobile-nav-btn"
                 style={{
-                  color: activeTab === 'upload' ? 'var(--accent-green)' : 'var(--text-muted)'
+                  color: activeTab === 'upload' ? 'var(--accent-blue)' : 'var(--text-muted)'
                 }}
               >
                 <UploadCloud size={18} />
@@ -574,7 +574,7 @@ export default function AdminDashboard() {
                 onClick={() => setActiveTab('forum')}
                 className="mobile-nav-btn"
                 style={{
-                  color: activeTab === 'forum' ? 'var(--accent-green)' : 'var(--text-muted)'
+                  color: activeTab === 'forum' ? 'var(--accent-blue)' : 'var(--text-muted)'
                 }}
               >
                 <MessageSquare size={18} />
@@ -585,7 +585,7 @@ export default function AdminDashboard() {
                 onClick={() => setActiveTab('help')}
                 className="mobile-nav-btn"
                 style={{
-                  color: activeTab === 'help' ? 'var(--accent-green)' : 'var(--text-muted)'
+                  color: activeTab === 'help' ? 'var(--accent-blue)' : 'var(--text-muted)'
                 }}
               >
                 <HelpCircle size={18} />
@@ -596,7 +596,7 @@ export default function AdminDashboard() {
                 onClick={() => setActiveTab('preferences')}
                 className="mobile-nav-btn"
                 style={{
-                  color: activeTab === 'preferences' ? 'var(--accent-green)' : 'var(--text-muted)'
+                  color: activeTab === 'preferences' ? 'var(--accent-blue)' : 'var(--text-muted)'
                 }}
               >
                 <Settings size={18} />
@@ -607,7 +607,7 @@ export default function AdminDashboard() {
                 onClick={() => setSidebarOpen(true)}
                 className="mobile-nav-btn"
                 style={{
-                  color: sidebarOpen ? 'var(--accent-green)' : 'var(--text-muted)'
+                  color: sidebarOpen ? 'var(--accent-blue)' : 'var(--text-muted)'
                 }}
               >
                 <Menu size={18} />
@@ -809,7 +809,7 @@ const styles = {
     width: '38px',
     height: '38px',
     borderRadius: '12px',
-    background: 'var(--accent-green)',
+    background: 'var(--accent-blue)',
     display: 'flex',
     alignItems: 'center',
     justifyContent: 'center',
@@ -883,9 +883,9 @@ const styles = {
     width: '6px',
     height: '6px',
     borderRadius: '50%',
-    background: 'var(--accent-green)',
+    background: 'var(--accent-blue)',
     marginLeft: 'auto',
-    boxShadow: '0 0 8px var(--accent-green)',
+    boxShadow: '0 0 8px var(--accent-blue)',
   },
   userCard: {
     marginTop: 'auto',
@@ -906,7 +906,7 @@ const styles = {
     display: 'flex',
     alignItems: 'center',
     justifyContent: 'center',
-    border: '1px solid rgba(43, 242, 160, 0.3)',
+    border: '1px solid rgba(59, 130, 246, 0.3)',
     flexShrink: 0,
   },
   userInfo: {
@@ -925,7 +925,7 @@ const styles = {
   },
   userRole: {
     fontSize: '0.68rem',
-    color: 'var(--accent-green)',
+    color: 'var(--accent-blue)',
     fontWeight: '600',
   },
   logoutBtn: {
