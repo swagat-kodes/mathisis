@@ -150,25 +150,83 @@ async def _embed_query_with_retry(query: str, retries: int = 4) -> list[float]:
                 raise exc
 
 
-def _generate_with_groq(prompt: str) -> str:
-    """Generates chat answer using Groq Llama 3.3 70B."""
-    api_key = GROQ_API_KEY or os.getenv("GROQ_API_KEY")
+def _generate_with_gemini(prompt: str) -> str:
+    """Generates chat answer using Gemini text model with fallbacks."""
+    api_key = GEMINI_API_KEY or os.getenv("GEMINI_API_KEY")
     if not api_key:
         raise HTTPException(
             status_code=status.HTTP_500_INTERNAL_SERVER_ERROR,
-            detail="GROQ_API_KEY environment variable is missing.",
+            detail="GEMINI_API_KEY environment variable is missing.",
         )
-    client = Groq(api_key=api_key)
-    chat_completion = client.chat.completions.create(
-        messages=[
-            {
-                "role": "user",
-                "content": prompt,
-            }
-        ],
-        model="llama-3.3-70b-versatile",
+    client = gemini_client or genai.Client(api_key=api_key)
+
+    models_to_try = ["gemini-2.5-flash", "gemini-1.5-flash", "gemini-2.0-flash"]
+    last_exc = None
+    for model in models_to_try:
+        try:
+            response = client.models.generate_content(
+                model=model,
+                contents=prompt,
+            )
+            if response.text:
+                return response.text
+        except Exception as exc:
+            logger.warning("Gemini text generation error with model %s: %s", model, exc)
+            last_exc = exc
+
+    if last_exc:
+        raise last_exc
+    raise HTTPException(
+        status_code=status.HTTP_500_INTERNAL_SERVER_ERROR,
+        detail="Gemini text generation returned empty response.",
     )
-    return chat_completion.choices[0].message.content
+
+
+def _generate_with_groq(prompt: str) -> str:
+    """Generates chat answer using Groq with multiple model fallbacks and Gemini fallback."""
+    api_key = GROQ_API_KEY or os.getenv("GROQ_API_KEY")
+    last_exc = None
+
+    if api_key:
+        client = Groq(api_key=api_key)
+        models_to_try = [
+            "llama-3.3-70b-versatile",
+            "llama-3.1-70b-versatile",
+            "llama-3.1-8b-instant",
+            "llama3-70b-8192",
+            "llama3-8b-8192",
+            "mixtral-8x7b-32768",
+            "gemma2-9b-it",
+        ]
+        for model in models_to_try:
+            try:
+                chat_completion = client.chat.completions.create(
+                    messages=[
+                        {
+                            "role": "user",
+                            "content": prompt,
+                        }
+                    ],
+                    model=model,
+                )
+                if chat_completion.choices and chat_completion.choices[0].message.content:
+                    return chat_completion.choices[0].message.content
+            except Exception as exc:
+                logger.warning("Groq generation error with model %s: %s", model, exc)
+                last_exc = exc
+
+    # Fallback to Gemini if Groq models failed or Groq API key is missing
+    try:
+        return _generate_with_gemini(prompt)
+    except Exception as gemini_exc:
+        logger.error("Gemini fallback generation error: %s", gemini_exc)
+
+    if last_exc:
+        raise last_exc
+    raise HTTPException(
+        status_code=status.HTTP_500_INTERNAL_SERVER_ERROR,
+        detail="Text generation failed for all configured models.",
+    )
 
 
 @router.get("/subjects")
